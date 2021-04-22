@@ -1,0 +1,9 @@
+server:
+  url: localhost
+  port: 8300
+
+minio:
+  url: localhost
+  port: 9000
+  username: test1234
+  password: test1234

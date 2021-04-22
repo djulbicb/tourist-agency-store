@@ -1,0 +1,16 @@
+server:
+  url: localhost
+  port: 8400
+
+db:
+  url: localhost
+  port: 8500
+
+api:
+  gateway:
+    endpoints:
+      - path: "[/]*api/database.*"
+        method: "GET"
+        location: http://${db.url}:${db.port}
+        username: ""
+        password: ""

@@ -1,0 +1,18 @@
+server:
+  port: 5555
+
+spring:
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQL95Dialect
+      ddl-auto: create
+      generate-ddl: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:26257/defaultdb?sslmode=disable&
+    driver-class-name: org.postgresql.Driver
+    username: root
+    password:
+    hikari:
+      connectionTimeout: 5000
+      maximumPoolSize: 4

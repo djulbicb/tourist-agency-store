@@ -1,0 +1,23 @@
+server:
+  url: localhost
+  port: 8100
+fileserver:
+  url: localhost
+  port: 8200
+minio:
+  url: localhost
+  port: 8300
+
+api:
+  gateway:
+    endpoints:
+      - path: "[/]*api/files.*"
+        method: "GET"
+        location: http://${fileserver.url}:${fileserver.port}
+        username: ""
+        password: ""
+      - path: "[/]*api/minio.*"
+        method: "GET"
+        location: http://${minio.url}:${minio.port}
+        username: "test1234"
+        password: "test1234"
